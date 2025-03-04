@@ -1,0 +1,10 @@
+{
+  "name": "foodfy-fastify",
+  "version": "0.0.0",
+  "description": "Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.",
+  "author": "Luiz Gonçalves<luizhbgoncalves@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
