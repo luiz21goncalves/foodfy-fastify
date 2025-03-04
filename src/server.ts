@@ -1,7 +1,7 @@
-import { app } from "./app";
-import { ENV } from "./env";
+import { app } from './app'
+import { ENV } from './env'
 
-app.listen({port: ENV.PORT, host: '0.0.0.0'})
+app.listen({ host: '0.0.0.0', port: ENV.PORT })
 
 const gracefulShutdown = () => {
   app.close(() => process.exit())

@@ -1,11 +1,11 @@
-import dotenv from "dotenv";
-import { expand } from 'dotenv-expand';
-import { z } from "zod";
+import dotenv from 'dotenv'
+import { expand } from 'dotenv-expand'
+import { z } from 'zod'
 
-expand(dotenv.config({path: `.env.${process.env.NODE_ENV}`}))
+expand(dotenv.config({ path: `.env.${process.env.NODE_ENV}` }))
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', "production"]),
+  NODE_ENV: z.enum(['development', 'test', 'production']),
   PORT: z.coerce.number(),
 })
 

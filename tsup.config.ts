@@ -1,10 +1,10 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/server.ts'],
-  sourcemap: true,
   clean: true,
+  entry: ['src/server.ts'],
   minify: true,
+  sourcemap: true,
   splitting: true,
-  target: ['es2022']
+  target: ['es2022'],
 })

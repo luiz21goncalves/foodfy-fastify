@@ -1,7 +1,7 @@
-import fastify from "fastify";
+import fastify from 'fastify'
 
 const app = fastify({
-  logger: true
+  logger: true,
 })
 
-export { app };
+export { app }
