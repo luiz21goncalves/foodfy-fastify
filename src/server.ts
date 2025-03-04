@@ -1,6 +1,7 @@
 import { app } from "./app";
+import { ENV } from "./env";
 
-app.listen({port: 3333, host: '0.0.0.0'}).then(address => {
+app.listen({port: ENV.PORT, host: '0.0.0.0'}).then(address => {
   console.info('Server running at:', address)
 }).catch(err => {
   console.error(err)
