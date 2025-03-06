@@ -1,12 +1,12 @@
 services:
   app:
-    container_name: fastify-app
+    container_name: foodfy-fastify-app
     build: .
     ports:
       - 3333:3333
 
   database:
-    container_name: postgres-dev
+    container_name: foodfy-fastify-postgres
     image: postgres:17.4-alpine3.21
     env_file:
       - .env.development
