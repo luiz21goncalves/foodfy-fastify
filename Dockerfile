@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 FROM base AS pnpm
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable pnpm && corepack use pnpm@10.5.2
+RUN corepack enable pnpm && corepack use pnpm@10.6.0
 
 FROM pnpm AS prod-deps
 COPY package.json pnpm-lock.yaml ./
