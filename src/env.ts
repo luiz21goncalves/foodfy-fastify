@@ -5,8 +5,14 @@ import { z } from 'zod'
 expand(dotenv.config({ path: `.env.${process.env.NODE_ENV}` }))
 
 const envSchema = z.object({
+  DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(['development', 'test', 'production']),
   PORT: z.coerce.number(),
+  POSTGRES_DB: z.string(),
+  POSTGRES_HOST: z.string(),
+  POSTGRES_PASSWORD: z.string(),
+  POSTGRES_PORT: z.coerce.number(),
+  POSTGRES_USER: z.string(),
 })
 
 const env = envSchema.safeParse(process.env)
