@@ -1,4 +1,5 @@
 import eslint from '@eslint/js'
+import drizzle from 'eslint-plugin-drizzle'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
@@ -44,6 +45,14 @@ export default [
     rules: {
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
+    },
+  },
+  {
+    plugins: {
+      drizzle,
+    },
+    rules: {
+      ...drizzle.configs.recommended.all,
     },
   },
 ]
