@@ -1,7 +1,7 @@
 import { sql } from 'drizzle-orm'
 
-import { db } from '../db'
-import { ENV } from '../env'
+import { db } from '@/db'
+import { ENV } from '@/env'
 
 export const status = {
   getDatabaseMaxConnections: async () => {
