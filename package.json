@@ -9,6 +9,9 @@
     "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "test:watch": "vitest",
     "prepare": "husky"
   },
   "dependencies": {
@@ -26,15 +29,19 @@
     "@tsconfig/node22": "22.0.0",
     "@types/node": "22.13.9",
     "@types/pg": "8.11.11",
+    "@types/supertest": "6.0.2",
+    "@vitest/coverage-v8": "3.0.8",
     "drizzle-kit": "0.30.5",
     "eslint": "9.21.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "globals": "16.0.0",
     "husky": "9.1.7",
     "neostandard": "0.12.1",
+    "supertest": "7.0.0",
     "tsup": "8.4.0",
     "tsx": "4.19.3",
     "typescript": "5.8.2",
-    "typescript-eslint": "8.26.0"
+    "typescript-eslint": "8.26.0",
+    "vitest": "3.0.8"
   }
 }
