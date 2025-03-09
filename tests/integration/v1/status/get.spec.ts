@@ -1,7 +1,7 @@
 import supertest from 'supertest'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 
-import { app } from '../../../../src/http/app'
+import { app } from '@/http/app'
 
 const PATH = '/v1/status'
 
