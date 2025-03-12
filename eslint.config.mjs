@@ -16,7 +16,6 @@ export default [
   }),
   {
     rules: {
-      '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],
       '@stylistic/max-len': ['warn', {
         code: 80,
