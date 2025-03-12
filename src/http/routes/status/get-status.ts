@@ -4,20 +4,23 @@ import z from 'zod'
 import { status } from '../../../models/status'
 
 export function getStatus(app: FastifyInstance) {
-  app.get('/status',
+  app.get(
+    '/status',
     {
       schema: {
         response: {
-          200: z.object({
-            dependencies: z.object({
-              database: z.object({
-                max_connections: z.number(),
-                opened_connections: z.number(),
-                version: z.string(),
+          200: z
+            .object({
+              dependencies: z.object({
+                database: z.object({
+                  max_connections: z.number(),
+                  opened_connections: z.number(),
+                  version: z.string(),
+                }),
               }),
-            }),
-            updated_at: z.string(),
-          }).describe('Status response'),
+              updated_at: z.string(),
+            })
+            .describe('Status response'),
         },
         summary: 'Application status',
         tags: ['Status'],
@@ -38,5 +41,6 @@ export function getStatus(app: FastifyInstance) {
         },
         updated_at: new Date().toISOString(),
       })
-    })
+    },
+  )
 }
