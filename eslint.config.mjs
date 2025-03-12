@@ -1,5 +1,7 @@
 import eslint from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import drizzle from 'eslint-plugin-drizzle'
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
@@ -16,15 +18,18 @@ export default [
   }),
   {
     rules: {
-      '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],
-      '@stylistic/max-len': ['warn', {
-        code: 80,
-        ignoreComments: false,
-        ignoreUrls: true,
-        tabWidth: 2,
-      }],
-      '@stylistic/space-before-function-paren': ['error',
+      '@stylistic/max-len': [
+        'warn',
+        {
+          code: 80,
+          ignoreComments: false,
+          ignoreUrls: true,
+          tabWidth: 2,
+        },
+      ],
+      '@stylistic/space-before-function-paren': [
+        'error',
         {
           anonymous: 'always',
           asyncArrow: 'always',
@@ -55,4 +60,21 @@ export default [
       ...drizzle.configs.recommended.all,
     },
   },
+  eslintPluginPrettier,
+  {
+    rules: {
+      'prettier/prettier': [
+        'error',
+        {
+          arrowParens: 'always',
+          printWidth: 80,
+          semi: false,
+          singleQuote: true,
+          tabWidth: 2,
+          trailingComma: 'all',
+        },
+      ],
+    },
+  },
+  eslintConfigPrettier,
 ]

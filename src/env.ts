@@ -6,8 +6,8 @@ expand(dotenv.config({ path: `.env.${process.env.NODE_ENV}` }))
 
 const envSchema = z.object({
   DATABASE_URL: z.string().url(),
-  ENABLE_API_LOGS: z.string().transform(value => value === 'true'),
-  ENABLE_DATABASE_LOGS: z.string().transform(value => value === 'true'),
+  ENABLE_API_LOGS: z.string().transform((value) => value === 'true'),
+  ENABLE_DATABASE_LOGS: z.string().transform((value) => value === 'true'),
   NODE_ENV: z.enum(['development', 'test', 'production']),
   PORT: z.coerce.number(),
   POSTGRES_DB: z.string(),
